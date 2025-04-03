@@ -9,7 +9,6 @@ import { loginAction } from "../../../../actions/login-action";
 
 export default function LoginComponent() {
   const [state , formAction , isPending] = useActionState(loginAction , null);  
-  console.log("state", state?.error);
   return (
     <form className="space-y-6 bg-white"  action={formAction}>
       {/* email */}

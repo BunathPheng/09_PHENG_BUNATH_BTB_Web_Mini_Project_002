@@ -1,11 +1,11 @@
 
-import { ButtonGroup } from '@heroui/react'
+import CardComponent from '@/components/card'
 import React from 'react'
 
 export default function InputWorkSpace() {
   return (
     <div>
-        <ButtonGroup />
+        <CardComponent/>
     </div>
   )
 }
