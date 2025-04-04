@@ -10,7 +10,7 @@ export const metadata = {
   description: "Homework 006 - Next.js",
 };
 
-export default function AuthenticationLayout({ children }) {
+export default async function AuthenticationLayout({ children }) {
   return (
     <html lang="en">
       <head>

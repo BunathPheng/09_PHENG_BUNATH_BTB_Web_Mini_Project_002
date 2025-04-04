@@ -3,15 +3,14 @@ import CardComponent from '@/components/card'
 import React from 'react'
 import { getDataTasksService } from '../../../../../service/tasks-service';
 import { workspaceGetById } from '../../../../../service/workspace-service';
-import Navbar from '../../_components/Navbar';
 import NavbarBar from '../../_components/Navbar';
 
 export default async function page({params}) {
   const workspaceId = (await params).Id;
   const getDataTasks = await getDataTasksService({workspaceId});
   const  workspaceData = await workspaceGetById({workspaceId});
-
-  
+console.log(getDataTasks)
+   
   // Filter tasks by status
   const notStarted = getDataTasks?.payload?.filter(task => task.status === 'NOT_STARTED');
   const inProgress = getDataTasks?.payload?.filter(task => task.status === 'IN_PROGRESS');
@@ -19,7 +18,7 @@ export default async function page({params}) {
 
   return (
     <>
-    <NavbarBar/>
+      <NavbarBar workspaceName={workspaceData?.payload?.workspaceName}/>
       <h1 className='font-bold mt-6'>{workspaceData?.payload?.workspaceName}</h1>
       <main className='grid grid-cols-3 gap-4 h-screen overflow-auto no-scrollbar'>
         <div className="flex flex-col overflow-auto no-scrollbar"> 
