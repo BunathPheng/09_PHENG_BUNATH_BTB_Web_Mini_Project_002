@@ -7,8 +7,10 @@ import Link from "next/link";
 import React, { useActionState } from "react";
 import { loginAction } from "../../../../actions/login-action";
 
+
 export default function LoginComponent() {
-  const [state , formAction , isPending] = useActionState(loginAction , null);  
+  const [state , formAction , isPending] = useActionState(loginAction , null);
+   
   return (
     <form className="space-y-6 bg-white"  action={formAction}>
       {/* email */}

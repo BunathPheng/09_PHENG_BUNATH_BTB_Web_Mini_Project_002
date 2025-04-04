@@ -13,7 +13,11 @@ export const metadata = {
 export default function AuthenticationLayout({ children }) {
   return (
     <html lang="en">
-      <body className="text-charcoal">
+      <head>
+        <title>{metadata.default}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
+      <body>
         {children}
         <Toaster />
       </body>

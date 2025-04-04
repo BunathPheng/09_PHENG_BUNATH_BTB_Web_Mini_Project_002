@@ -1,4 +1,5 @@
 "use server";
+import { redirect } from "next/navigation";
 import { signIn } from "../auth";
 
 export const loginAction = async (_, formData) => {
@@ -21,5 +22,6 @@ export const loginAction = async (_, formData) => {
     password,
     redirect: false,
   });
-  // redirect("/");
+  redirect("/todo");
+  
 };

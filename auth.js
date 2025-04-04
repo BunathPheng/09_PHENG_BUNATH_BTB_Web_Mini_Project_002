@@ -12,7 +12,12 @@ export const { signIn , auth } = NextAuth({
       authorize: async (credentials) => {
         const { email, password } = credentials;
         const res = await loginService({ email, password });
-        console.log("session" , res);
+        if(res?.status !== "OK"){
+          return 
+          {
+            error : "error"
+          };
+        }
         return res;
       },
     }),

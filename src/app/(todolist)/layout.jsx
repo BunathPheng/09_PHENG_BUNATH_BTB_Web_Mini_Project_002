@@ -1,14 +1,11 @@
 
 import Logo from "@/components/logo";
 import Sidebar from "./_components/Sidebar";
-import Navbar from "./_components/Navbar";
-import { ThemeModeScript } from 'flowbite-react';
+import { AddTaskComponent } from "@/taks/_components/AddTaskComponent";
+import NavbarBar from "./_components/Navbar";
 export default function AuthenticationLayout({ children }) {
   return (
     <>
-      <head>
-        <ThemeModeScript />
-      </head>
       <div className="flex min-h-screen">
         {/* Sidebar Section */}
         <div className="w-64 flex-shrink-0">
@@ -17,8 +14,8 @@ export default function AuthenticationLayout({ children }) {
         </div>
         {/* Main Content Section */}
         <div className="flex flex-col flex-grow px-6">
-          <Navbar />
           <main>{children}</main>
+         <AddTaskComponent/>
         </div>
       </div>
     </>

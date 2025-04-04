@@ -1,5 +1,4 @@
 import Logo from "@/components/logo";
-
 export default function AuthenticationLayout({ children }) {
   return (
       <div className="text-charcoal">
